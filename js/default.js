@@ -5,11 +5,22 @@ $(function() {
   // 视觉差动画
   $('#scene').parallax();
 
+  // 设置动画
+  setAnimate();
+});
+
+// 设置动画
+function setAnimate() {
   // 搜索栏
   $('#search').focus(function() {
     $(this).next().find('i.fa-search').animateCss('flip');
   });
-});
+
+  // 导航覆盖
+  $('aside li').hover(function() {
+    $(this).animateCss('pulse');
+  });
+}
 
 // Animate动画
 $.fn.extend({
