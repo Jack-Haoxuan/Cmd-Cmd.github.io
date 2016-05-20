@@ -1,0 +1,38 @@
+/*全局*/
+html, body {
+    -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+    user-select: none;
+}
+body {
+    font-family: 微软雅黑, "Helvetica Neue", Helvetica, STHeiTi, sans-serif; /* 无衬线字体 */
+    font-size: 12px;
+}
+a, img {
+    -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
+/* -webkit-scrollbar */
+::-webkit-scrollbar{
+    height: 7px;
+    width: 7px;
+    opacity: 0;
+}
+::-webkit-scrollbar-button{
+    display: none;
+}
+::-webkit-scrollbar-corner{
+    background-color: #eee;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #eee;
+    border-radius: 7px;
+}
+::-webkit-scrollbar-track{
+    background-color: #666;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track-piece:start{
+    background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #white;
+}
