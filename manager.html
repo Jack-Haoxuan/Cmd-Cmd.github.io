@@ -80,14 +80,34 @@
         </div>
 	</div>
 
+    <!-- 密码验证 -->
+    <div class="modal fade" id="password" aria-hidden="true">
+        <div class="modal-dialog"><div class="modal-content">
+            <div class="modal-header">
+                <button class="close" aria-hidden="true" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">请输入个人管理密码</h4>
+            </div>
+                <div class="modal-body">
+                    <input type="password" class="form-control" name="password">
+                    <h4 class="text-danger" id="verifyInfo"></h4>
+                </div><div class="modal-footer">
+                    <button id="verifyOK" class="btn btn-primary">确认</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery 2.1.4 -->
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- Bootstrap 3.3.4 -->
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <!-- parallax -->
     <script src="js/jquery.parallax.js"></script>
+    <!-- MD5 -->
+    <script src="js/md5.min.js"></script>
     <!-- MyFile -->
     <script src="js/default.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/manager.js"></script>
 </body>
 </html>

@@ -20,18 +20,18 @@ a, img {
     display: none;
 }
 ::-webkit-scrollbar-corner{
-    background-color: #eee;
+    background-color: #ccc;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: #eee;
+    background-color: #ccc;
     border-radius: 7px;
 }
 ::-webkit-scrollbar-track{
-    background-color: #666;
+    background-color: #333;
     border-radius: 5px;
 }
 ::-webkit-scrollbar-track-piece:start{
-    background-color: #ccc;
+    background-color: #333;
 }
 ::-webkit-scrollbar-thumb:hover{
     background-color: #white;
@@ -46,9 +46,9 @@ body{
     background-color: black;
     position: absolute;
     width: 110%;
-    min-width: 660px;
+    min-width: 320px;
     height: 110%;
-    min-height: 330px;
+    min-height: 480px;
     top: -30px;
     left: -15px;
     overflow: hidden;
@@ -84,7 +84,7 @@ body{
     width: 100%;
     height: 150%;
     background-color: white;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 /*侧边栏*/
 #layer_1 aside{
@@ -94,11 +94,158 @@ body{
     right: 0;
     top: 10%;
 }
+#layer_1 aside div.nav-container{
+    height: 400px;
+    overflow: auto;
+}
+#layer_1 aside ul{
+    width: 99%;
+}
+#layer_1 aside ul.dropdown-menu{
+    float: none;
+    text-align: right;
+    background-color: transparent;
+    position: relative;
+}
 /*主界面*/
 #main_container{
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.3);
     right: 10%;
     height: 100%;
     width: 70%;
+}
+#main_top{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+    background: -webkit-linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0));
+}
+#main_bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: -webkit-linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0.5));
+}
+#main_content{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+/*文章预览*/
+#main_content article.preview{
+    width: 100%;
+    height: 180px;
+    box-sizing: content-box;
+    border-top: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+#main_content article.preview:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+}
+#main_content article.preview:first-child{
+    padding-top: 80px;
+    border-top: 0;
+}
+#main_content article.preview:last-child{
+    padding-bottom: 80px;
+}
+#main_content article.preview header{
+    border-left: 5px solid rgb(159, 150, 135);
+    padding-left: 10px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+#main_content article.preview header h3{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+    display: block;
+}
+#main_content article.preview:hover header{
+    border-left: 30px solid rgb(247, 216, 164);
+}
+#main_content article.preview p{
+    text-indent: 2em;
+    padding: 0 10px;
+    line-height: 1.5em;
+    height: 7.5em;
+    overflow: hidden;
+}
+#main_content article.preview footer{
+    padding: 0 15px;
+}
+/*文章详情*/
+#main_content article.detailview{
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#main_content article.detailview:first-child{
+    padding-top: 80px;
+    border-top: 0;
+}
+#main_content article.detailview:last-child{
+    padding-bottom: 80px;
+}
+/*小屏响应*/
+@media all and (max-width: 768px) {
+    /*导航栏*/
+    #layer_1 .layer_container{
+        height: 70px;
+        width: 100%;
+        left: 0;
+    }
+    #layer_1 aside{
+        padding: 20px;
+        padding-bottom: 0;
+    }
+    #layer_1 aside div.nav-container{
+        padding-left: 30px;
+        height: 40px;
+        overflow: visible;
+    }
+    #layer_1 aside ul.dropdown-menu{
+        position: absolute;
+    }
+    .nav-stacked>li{
+        float: left;
+    }
+    /*主界面*/
+    #main_container{
+        top: 102px;
+        width: 85%;
+        height: 85%;
+    }
+    #main_top{
+        height: 30px;
+    }
+    #main_bottom{
+        height: 60px;
+    }
+    #main_content article.preview{
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.7);
+        color: black;
+    }
+    #main_content article.preview:first-child{
+        padding-top: 40px;
+        border-top: 0;
+    }
+    #main_content article.preview:last-child{
+        padding-bottom: 70px;
+    }
 }
