@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
     <!-- Animate -->
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/animate.css/3.1.0/animate.min.css">
+    <!-- Animsition 4.0.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
     <!-- MyFile -->
     <link rel="stylesheet" href="CSS/default.css">
 </head>
@@ -39,12 +41,12 @@
             </div>
         </div>
         <div class="layer" data-depth="0.2" id="layer_1">
-            <div id="main_container">
+            <div id="main_container" class="animsition" data-animsition-in-class="fade-in-up" data-animsition-out-class="fade-out-up">
                 <section id="main_content"></section>
                 <div id="main_top"></div>
                 <div id="main_bottom"></div>
             </div>
-            <div class="layer_container">
+            <div class="layer_container animsition" data-animsition-in-class="fade-in-down" data-animsition-out-class="fade-out-down">
                 <div class="layer_mask"></div>
                 <aside class="animated bounceInDown">
                     <div class="row">
@@ -61,18 +63,18 @@
                         </div>
                         <div class="col-sm-12 col-xs-12 nav-container">
                             <ul class="nav nav-pills nav-stacked pull-right">
-                                <li><a href="index.html"><i class="fa fa-home"> 首页</i></a></li>
+                                <li><a class="animsition-link" href="index.html"><i class="fa fa-home"> 首页</i></a></li>
                                 <li>
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><i class="fa fa-terminal"> 前端</i><i class="caret"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li data-cate="20"><a href="pages/search.html?category=20"><i class="fa fa-html5"> HTML/CSS</i></a></li>
-                                        <li data-cate="21"><a href="pages/search.html?category=21"><i class="fa fa-code"> Javascript/jQuery</i></a></li>
+                                        <li data-cate="20"><a class="animsition-link" href="pages/search.html?category=20"><i class="fa fa-html5"> HTML/CSS</i></a></li>
+                                        <li data-cate="21"><a class="animsition-link" href="pages/search.html?category=21"><i class="fa fa-code"> Javascript/jQuery</i></a></li>
                                     </ul>
                                 </li>
-                                <li data-cate="3"><a href="pages/search.html?category=3"><i class="fa fa-database"> 数据库</i></a></li>
-                                <li data-cate="0"><a href="pages/search.html?category=0"><i class="fa fa-plus"> 其他</i></a></li>
-                                <li data-cate="1"><a href="pages/search.html?category=1"><i class="fa fa-info"> 关于</i></a></li>
-                                <li><a href="pages/editMD.html"><i class="fa fa-edit"> 新增</i></a></li>
+                                <li data-cate="3"><a class="animsition-link" href="pages/search.html?category=3"><i class="fa fa-database"> 数据库</i></a></li>
+                                <li data-cate="0"><a class="animsition-link" href="pages/search.html?category=0"><i class="fa fa-plus"> 其他</i></a></li>
+                                <li data-cate="1"><a class="animsition-link" href="pages/search.html?category=1"><i class="fa fa-info"> 关于</i></a></li>
+                                <li><a class="animsition-link" href="pages/editMD.html"><i class="fa fa-edit"> 新增</i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -107,6 +109,8 @@
     <script src="js/jquery.parallax.js"></script>
     <!-- MD5 -->
     <script src="js/md5.min.js"></script>
+    <!-- Animsition 4.0.2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
     <!-- MyFile -->
     <script src="js/default.js"></script>
     <script src="js/manager.js"></script>

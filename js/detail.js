@@ -26,6 +26,7 @@ $(function() {
         var atc = $('article.detailview');
         atc.unbind('click');
         // 标题
+        $('title').html('Cmd小站 - ' + data.title);
         atc.find('.detailTitle span').html(data.title);
         atc.find('.detailTitle time').html(data.time);
         // 正文

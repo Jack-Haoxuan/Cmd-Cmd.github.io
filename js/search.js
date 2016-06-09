@@ -27,6 +27,7 @@ $(function() {
     var eq = arg[i].search('=');
     if (eq != -1 && arg[i].slice(0,eq) == 'keyword') {
       keyword = arg[i].slice(eq + 1, arg[i].length);
+      keyword = decodeURI(keyword); // 中文解码
     } else if (eq != -1 && arg[i].slice(0, eq) == 'category') {
       category = arg[i].slice(eq + 1, arg[i].length);
     }

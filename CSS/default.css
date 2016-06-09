@@ -10,6 +10,9 @@ body {
 a, img {
     -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
 }
+.animsition-loading{
+    color: white;
+}
 /* -webkit-scrollbar */
 ::-webkit-scrollbar{
     height: 7px;
