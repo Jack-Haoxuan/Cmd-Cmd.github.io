@@ -1,0 +1,71 @@
+article.detailview{
+    font-size: 16px;
+}
+article.detailview .detailTitle{
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #343118;
+}
+article.detailview .detailTitle span{
+    color: rgb(255, 255, 255);
+    font-size: 2.5em;
+    text-shadow:  0 0 10px white;
+}
+article.detailview .detailTitle time{
+    color: rgb(11, 22, 60);
+    font-size: 0.9em;
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+}
+article.detailview .detailBody h1{
+    font-size: 2em;
+}
+article.detailview .detailBody h2{
+    font-size: 1.6em;
+}
+article.detailview .detailBody h3{
+    font-size: 1.3em;
+}
+article.detailview .detailBody h4{
+    font-size: 1.2em;
+}
+article.detailview .detailBody h5{
+    font-size: 1.1em;
+}
+article.detailview .detailBody h6{
+    font-size: 1.05em;
+}
+article.detailview .detailBody h1,
+article.detailview .detailBody h2,
+article.detailview .detailBody h3,
+article.detailview .detailBody h4,
+article.detailview .detailBody h5,
+article.detailview .detailBody h6{
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: 5px solid rgb(247, 216, 164);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+article.detailview .detailBody h1:hover,
+article.detailview .detailBody h2:hover,
+article.detailview .detailBody h3:hover,
+article.detailview .detailBody h4:hover,
+article.detailview .detailBody h5:hover,
+article.detailview .detailBody h6:hover{
+    border-left: 30px solid rgb(247, 216, 164);
+    color: white;
+    text-shadow: -40px -1.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+article.detailview .detailBody p{
+    text-indent: 2em;
+    word-break: break-all;
+}
+article.detailview .detailFooter{
+    margin-top: 30px;
+    border-top: 1px dashed #343118;
+    padding-top: 20px;
+}
