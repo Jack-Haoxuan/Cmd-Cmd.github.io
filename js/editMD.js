@@ -63,9 +63,10 @@ $(function() {
     // 验证密码
     $('#password').modal();
     // 关闭
-    $('#password').on('hide.bs.modal', function() {
+    $('#password').on('hidden.bs.modal', function() {
       $('input[name=password]').val('');
       $('#verifyInfo').html('');
+      $('verifyOK').unbind('click');
     });
     // 确认
     $('#verifyOK').click(function() {
@@ -115,7 +116,7 @@ $(function() {
                   }
                   $('#submit').removeClass('disabled').html('开始上传');
                 }
-            );
+          );
         } else {
           $.post(
               'http://c-m-d.ren/createMD.php',

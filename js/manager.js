@@ -23,7 +23,7 @@ $(function() {
   getData();
 
   // 滚动监听
-  startScroll();
+  // startScroll();
 
   // 修改
   $('#main_content').on('click', 'button[name=modify]', function() {
@@ -33,12 +33,13 @@ $(function() {
 
   // 删除
   $('#main_content').on('click', 'button[name=delete]', function() {
-    var temp = $(this).parents('article.preview').eq(0);
+    var tempArt = $(this).parents('article.preview').eq(0);
     $('#password').modal();
     // 关闭
-    $('#password').on('hide.bs.modal', function() {
+    $('#password').on('hidden.bs.modal', function() {
       $('input[name=password]').val('');
       $('#verifyInfo').html('');
+      $('#verifyOK').unbind('click');
     });
     // 确认
     $('#verifyOK').click(function() {
@@ -50,11 +51,11 @@ $(function() {
         $.post('http://c-m-d.ren/deleteMD.php',
           {
             'password': pw,
-            'id': temp.attr('data-id')
+            'id': tempArt.attr('data-id')
           },
           function(data) {
             if (data == 0) {
-              temp.remove();
+              tempArt.remove();
               limitStart -= 1;
               limitEnd -= 1;
             } else {
