@@ -11,4 +11,4 @@
 ## 目前可以公开的情报
 * 邮箱：554120271@qq.com  
 * [我的Github](https://github.com/Cmd-Cmd)  
-* ![其实用Whois查一下就有各种信息我会乱说?](../img/connect.png)    
+![其实用Whois查一下就有各种信息我会乱说?](../img/connect.png)    

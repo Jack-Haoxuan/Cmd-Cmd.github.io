@@ -8,8 +8,14 @@ $(function() {
   // 设置动画
   setAnimate();
 
+  // 标签搜索指引
   $('#main_content').on('click', 'label.label', function() {
     $('#search').val($(this).html()).focus();
+  });
+
+  // 搜索
+  $('#searchBtn').click(function() {
+    $('#searchForm').submit();
   });
 });
 

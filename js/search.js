@@ -17,12 +17,33 @@ var noMore = {
   'labels': {},
   'time': ''
 };
-
+// 传入关键字
+var keyword = '';
+var category = '-1';
 $(function() {
+  // 寻找关键字参数
+  var arg = location.href.split(/[?&]/);
+  for (var i = 0; i < arg.length; i++) {
+    var eq = arg[i].search('=');
+    if (eq != -1 && arg[i].slice(0,eq) == 'keyword') {
+      keyword = arg[i].slice(eq + 1, arg[i].length);
+    } else if (eq != -1 && arg[i].slice(0, eq) == 'category') {
+      category = arg[i].slice(eq + 1, arg[i].length);
+    }
+  }
+  // 分类查找
+  if (category != '-1') {
+    var lis = $('li[data-cate=' + category + ']').parents('li').andSelf();
+    if (lis.length > 0) {
+      lis.addClass('active');
+    } else {
+      category = '-1';
+    }
+  }
   // 详细页面
   $('#main_content').on('click', 'article', function() {
     if ($(this).attr('data-id') != '-1') {
-      location.href = 'pages/detail.html?id=' + $(this).attr('data-id');
+      location.href = 'detail.html?id=' + $(this).attr('data-id');
     }
   });
   // 初始数据
@@ -53,10 +74,12 @@ function getData() {
   temp.click(function() {
     location.reload();
   });
-  $.post('http://c-m-d.ren/index.php',
+  $.post('http://c-m-d.ren/searchMD.php',
     {
       'limitStart': limitStart,
-      'limitEnd': limitEnd
+      'limitEnd': limitEnd,
+      'keyword': keyword,
+      'category': category
     },
     function(data) {
       temp.remove();

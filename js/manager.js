@@ -87,7 +87,7 @@ function getData() {
   temp.find('header').prepend('<h1>' + temp.find('h3').html() + '</h1>');
   temp.find('h3').remove();
   temp.click(function() {
-    location.href = 'index.html';
+    location.reload();
   });
   $.post('http://c-m-d.ren/index.php',
     {

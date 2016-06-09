@@ -87,6 +87,9 @@ body{
     opacity: 0.7;
 }
 /*侧边栏*/
+#searchBtn{
+    cursor: pointer;
+}
 #layer_1 aside{
     text-align: right;
     width: 100%;
