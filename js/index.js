@@ -29,7 +29,7 @@ $(function() {
   getData();
 
   // 滚动监听
-  startScroll();
+  // startScroll();
 });
 
 // 开始滚动监听
