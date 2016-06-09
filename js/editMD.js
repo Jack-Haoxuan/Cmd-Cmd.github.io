@@ -53,8 +53,9 @@ $(function() {
   });
 
   // 删除标签
-  $('#labels').on('click', 'label', function() {
+  $('#labels').on('click', 'label.label', function() {
     this.remove();
+    return false;
   });
 
   // 上传

@@ -8,7 +8,7 @@ $(function() {
   // 设置动画
   setAnimate();
 
-  $('#main_content').on('click', 'label', function() {
+  $('#main_content').on('click', 'label.label', function() {
     $('#search').val($(this).html()).focus();
   });
 });
