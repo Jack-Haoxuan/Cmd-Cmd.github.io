@@ -25,6 +25,9 @@ $(function() {
         data = JSON.parse(data);
         var atc = $('article.detailview');
         atc.unbind('click');
+        // 导航
+        var lis = $('li[data-cate=' + data.category + ']').parents('li').andSelf();
+        lis.addClass('active');
         // 标题
         $('title').html('Cmd小站 - ' + data.title);
         atc.find('.detailTitle span').html(data.title);

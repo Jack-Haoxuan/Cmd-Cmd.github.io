@@ -19,7 +19,34 @@ $(function() {
   $('#searchBtn').click(function() {
     $('#searchForm').submit();
   });
+
+  // 进入管理页面
+  $('#search').keydown(admin);
 });
+
+// 进入管理页面
+adminState = 0;
+function admin(e) {
+  console.log();
+  if (adminState < 2 && e.keyCode == 17) {
+    adminState++;
+  } else if ((adminState == 2 || adminState == 4) && e.keyCode == 37) {
+    adminState++;
+  } else if ((adminState == 3 || adminState == 5) && e.keyCode == 39) {
+    adminState++;
+  } else {
+    adminState = 0;
+  }
+  if (adminState == 6) {
+    console.log('触发秘密开关');
+    if (location.pathname.indexOf('/pages/') != -1) {
+      location.href = '../manager.html';
+    }else {
+      location.href = 'manager.html';
+    }
+    return false;
+  }
+}
 
 // 设置动画
 function setAnimate() {
@@ -75,6 +102,7 @@ function addArticle(orgInfo) {
   // 加入正文
   atc.append(ftr);
   $('#main_content').append(atc);
+  atc.animateCss('zoom-in');
   return atc;
 }
 

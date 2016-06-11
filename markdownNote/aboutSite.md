@@ -47,4 +47,57 @@ FTP管理
 管理(老实说很难用...也不知道怎么远程用[Workbench](http://dev.mysql.com/downloads/workbench/)或者[Navicat](https://www.navicat.com.cn/)连接，只能指望自己写的脚本鲁棒性非常好了)  
 * 域名 - `http://c-m-d.ren` - 第一年8元第二年39元...吃土吧  
 
-# 特别鸣谢
+## 日志 & 框架 & 插件
+　　**一入前端深似海，从此节操是路人**——这句古老的话仔细想想很贴切啊，现在网站的代码都是抄来抄去的，自己原创的东西真的很少，这里用一个框架，那里用一个插件，甚至一键可视化建站，只需要你去拖放物件搭积木一样(忽然想到大一的时候玩的[Appinventor](http://www.appinventor.org/))。
+自然不是大牛的我也是用了众多框架和插件的，别看只是这么简陋的一个小站(~~突然感到如果哪天没有了开源真是一个惊天的shock~~)...因此 **我会将所有用到的框架、插件、素材都列特别感谢** 里面(虽然不知道这样妥不妥)  
+
+### 主要框架
+　　自然是最常见也是目前最火的[Bootstrap](http://getbootstrap.com/)
+了，最开始接触这个框架是从[百度前端学院的响应式网格（栅格化）布局](http://ife.baidu.com/task/detail?taskId=8)
+中看到的，当时就对[媒体查询]()
+佩服的五体投地，更不用说Bootstrap了。这里安利一个教程网——[菜鸟教程](http://www.runoob.com/)
+里面内容很多，我Bootstrap就是从这里一点一点学的  
+
+### 视差滚动插件
+　　[parallax.js](http://matthew.wagerfield.com/parallax/)
+这个插件是从[30组常用前端开发组件库，前端组件收集整理列表](http://www.luoxiao123.cn/1196.html)
+这里面找到的(其实很多其他插件也是这里看到的 后面就不一一说明了)。总之就是鼠标在界面上移动或者倾斜手机会有的动画效果(不过好像手机端上堆叠效果太多...)  
+
+### 一款非常轻量级的CSS3动画插件
+[Animate.css](https://daneden.github.io/animate.css/)
+可以说看到demo页就立即让我眼前一亮，方便使用，小巧灵活，详细自己去看吧  
+
+### 文本存储形式
+　　既然算是一个博客，那么必然数据库内有大量的文章内容，那么我用什么格式存储文章呢？当然作为~~资深~~GitHub用户，[markdown](http://www.markdowntutorial.com/)
+必然是首选，更不用说.md尾缀简直和我名字绝配！markdown语法简易，上手很快，基本上自己写几篇就能把大概语法记住了。不过markdown的表现能力很有限，我也在考虑更复杂的文本渲染应该怎样去存储...(PS: 这篇文章也是markdown写的哦)  
+　　那么怎样解析markdown为html文档呢，自然就是插件啦~[markdown-it](https://markdown-it.github.io/)
+这款插件就是我用来解析markdown格式的，其实插件功能很强大，很多时候我都把插件大材小用了，额= =
+
+### 跨域问题
+　　这个问题对于我来说依旧还是很新鲜，既然我页面是放在Github，而后台脚本、数据都是在主机屋，这就是正宗的从一个站点请求另一个站点的数据——跨域访问啊！很明显为了安全性考虑跨域是禁止的，但是又有时候非得跨域怎么办呢？我找到以下三种方法：  
+* iframe
+> 没错就是这个刚开始接触就决定抛弃它的标签，似乎也是最原始的解决跨域问题的方法，所以也被我理所当然的再次抛弃...(有兴趣自己去搜下吧，因为没有深究也没有留什么资料)
+
+* JSONP
+> 首先让我表达下对大牛们的佩服！这并不是一个正式的传输协议，只是因为偶然发现标签的src属性不受跨域影响 + JSON的简洁数据存储格式，就擅自给它取了这个名字，更是jQuery的getJSON方法直接就是针对JSONP的。本来我也是用JSONP来跨域的，但后来发现JSONP只能通过GET方式传输数据，自然博客这种大段文字就别想一个GET可以解决了，所以当我找到了下面这种方法后就抛弃了JSONP(可以看下[说说JSON和JSONP](http://kb.cnblogs.com/page/139725/))  
+
+* CORS
+> 全名是[Cross-Origin Resource Sharing](https://www.w3.org/TR/cors/)
+这回W3C终于也发出了标准，使用时只需要在响应上添加Access-Control-Allow-Origin信息(是不是很熟悉？就是非正常跨域时会报的错误...)就可以啦，不过对于IE9及以下的浏览器就呵呵了。总之 **这就是我目前用来解决跨域问题的方法了**
+
+　　其实跨域这个问题在今天真不是问题了，似乎ActiveX、服务器代理、Websocket等众多方式都能解决——让我再次佩服一次JSONP
+
+### 另一个针对页面转换的CSS3动画插件
+[Animsition](http://git.blivesta.com/animsition/)
+用法上比Animate.css稍微复杂点，功能也更强大，主要是页面切换以及加载时的效果，详细就去它主页看看吧  
+
+# 特别感谢
+> [Bootstrap 框架](http://getbootstrap.com/)  
+> [parallax.js](http://matthew.wagerfield.com/parallax/)  
+> [pixabay 图片站](https://pixabay.com/)  
+> [Font Awesome 字体图标](http://fontawesome.io/)  
+> [markdown-it](https://markdown-it.github.io/)  
+> [Animsition](http://git.blivesta.com/animsition/)  
+> [JavaScript MD5](https://blueimp.github.io/JavaScript-MD5/)  
+> [百度静态资源公共库](http://cdn.code.baidu.com/)  
+> [cdnjs](https://cdnjs.com/)  

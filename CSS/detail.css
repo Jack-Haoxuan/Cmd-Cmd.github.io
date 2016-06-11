@@ -64,11 +64,48 @@ article.detailview .detailBody p{
     text-indent: 2em;
     word-break: break-all;
 }
+article.detailview .detailBody li p,
+article.detailview .detailBody blockquote p{
+    text-indent: 0;
+}
 article.detailview .detailBody img{
     display: block;
     text-align: center;
     margin: 0 auto;
     width: 50%;
+}
+article.detailview .detailBody blockquote{
+    position: relative;
+    border: 0;
+}
+article.detailview .detailBody blockquote:before,
+article.detailview .detailBody blockquote:after{
+    content: "";
+    position: absolute;
+    opacity: 0.8;
+    -webkit-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+article.detailview .detailBody blockquote:hover{
+    border-radius: 5px;
+    box-shadow: 0 0 10px 3px white;
+}
+article.detailview .detailBody blockquote:hover:before,
+article.detailview .detailBody blockquote:hover:after{
+    opacity: 1;
+}
+article.detailview .detailBody blockquote:before{
+    border-left: 1.5em solid white;
+    border-bottom: 1.5em solid transparent;
+    left: 0;
+    top: 0;
+}
+article.detailview .detailBody blockquote:after{
+    border-right: 2.5em solid white;
+    border-top: 2.5em solid transparent;
+    bottom: 0;
+    right: 0;
 }
 article.detailview .detailFooter{
     margin-top: 30px;
