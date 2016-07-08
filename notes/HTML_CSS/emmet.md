@@ -131,7 +131,7 @@ background-color: #234;
 
 --------
 
-## 资料整理
+# 资料整理
 > [Emmet：HTML/CSS代码快速编写神器](http://www.iteye.com/news/27580)  
 > [使用Emmet加速Web前端开发](http://www.w3cplus.com/tools/using-emmet-speed-front-end-web-development.html)  
 > [更多详细请参考emmet文档](http://docs.emmet.io/cheat-sheet/)    

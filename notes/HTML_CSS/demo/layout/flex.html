@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏布局 - 弹性布局</title>
+</head>
+<style>
+html, body{
+    margin: 0;
+    padding: 0;
+}
+header, footer, div{
+    min-height: 100px;
+}
+header, footer{
+    background-color: #999;
+}
+div.flex-box{
+    display: flex;
+    display: -webkit-flex;
+}
+div.left{
+    background-color: #fcc;
+    -webkit-flex-basis: 200px;
+    flex-basis: 200px;
+    -webkit-order: -1;
+    order: -1;
+}
+div.main{
+    background-color: #cfc;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+div.right{
+    background-color: #ccf;
+    -webkit-flex-basis: 150px;
+    flex-basis: 150px;
+}
+</style>
+<body>
+    <header>Header</header>
+    <div class="flex-box">
+        <div class="main">Main</div>
+        <div class="left">Left</div>
+        <div class="right">Right</div>
+    </div>
+    <footer>Footer</footer>
+</body>
+<pre>
+    主要样式
+    <code>
+        div.flex-box{
+            display: flex;
+            display: -webkit-flex;
+        }
+        div.left{
+            background-color: #fcc;
+            -webkit-flex-basis: 200px;
+            flex-basis: 200px;
+            -webkit-order: -1;
+            order: -1;
+        }
+        div.main{
+            background-color: #cfc;
+            -webkit-flex-grow: 1;
+            flex-grow: 1;
+        }
+        div.right{
+            background-color: #ccf;
+            -webkit-flex-basis: 150px;
+            flex-basis: 150px;
+        }
+    </code>
+</pre>
+</html>
