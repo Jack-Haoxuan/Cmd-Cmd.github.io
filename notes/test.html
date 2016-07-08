@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    html, body{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        height: 100px;
+    }
+    .header, .footer{
+        width: 100%;
+        background-color: #eee;
+    }
+    .bd{
+        padding: 0 150px 0 200px;
+    }
+    .main{
+        background-color: #ccf;
+        width: 100%;
+        float: left;
+    }
+    .left{
+        background-color: #ffc;
+        float: left;
+        width: 200px;
+        position: relative;
+        left: -200px;
+        margin-left: -100%;
+    }
+    .right{
+        background-color: #cfc;
+        width: 150px;
+        float: left;
+        margin-left: -150px;
+        position: relative;
+        right: -150px;
+    }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="bd">
+        <div class="main">圣杯部局</div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

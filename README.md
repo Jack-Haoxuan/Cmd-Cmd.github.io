@@ -1,4 +1,3 @@
-# 这里是Cmd的个人主页
-[点我进入Cmd小站](http://cmd-cmd.github.io/)  
-[关于我](http://cmd-cmd.github.io/pages/detail.html?id=70)  
-[关于本站](http://cmd-cmd.github.io/pages/detail.html?id=71)  
+Welcome here
+========
+[我的CSDN笔记本](http://blog.csdn.net/u012273376)  
