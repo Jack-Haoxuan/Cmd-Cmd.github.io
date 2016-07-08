@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏布局 - 左右中</title>
+</head>
+<style>
+html, body{
+    margin: 0;
+    padding: 0;
+}
+header, footer, div{
+    min-height: 100px;
+}
+header, footer{
+    background-color: #999;
+    clear: both; /* clear float */
+}
+div.left{
+    background-color: #fcc;
+    width: 200px;
+    float: left;
+}
+div.main{
+    background-color: #cfc;
+    margin-left: 200px;
+    margin-right: 150px;
+}
+div.right{
+    background-color: #ccf;
+    width: 150px;
+    float: right;
+}
+</style>
+<body>
+    <header>Header</header>
+    <div class="left">Left</div>
+    <div class="right">Right</div>
+    <div class="main">Main</div>
+    <footer>Footer</footer>
+</body>
+</html>
