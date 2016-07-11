@@ -45,6 +45,7 @@ display: -webkit-inline-flex;
 > `flex: auto` - 即为`flex: 1 1 auto`  
 > `flex: none` - 即为`flex: 0 0 auto`  
 > [demo](http://htmlpreview.github.io/?https://github.com/Cmd-Cmd/cmd-cmd.github.io/blob/master/notes/HTML_CSS/demo/flex/items.html)  
+
 --------
 
 # 资料整理
