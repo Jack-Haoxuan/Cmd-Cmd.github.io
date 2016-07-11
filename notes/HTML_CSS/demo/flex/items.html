@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置在项目上的属性</title>
+    <style>
+    html, body{
+        margin: 0;
+        padding: 0;
+    }
+    form{
+        margin: 0 auto;
+        margin-top: 30px;
+        text-align: center;
+    }
+    #container{
+        margin: 0 auto;
+        display: flex;
+        display: -webkit-flex;
+        border: 1px solid blue;
+        width: 700px;
+    }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div style="background-color: #ccf">
+        order
+        <select name="order">
+            <option value="-1">-1</option>
+            <option value="0" selected="selected">0</option>
+            <option value="1">1</option>
+        </select>
+        <hr>
+        flex-grow
+        <select name="flex-grow">
+            <option value="0" selected="selected">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        <hr>
+        flex-shrink
+        <select name="flex-shrink">
+            <option value="0">0</option>
+            <option value="1" selected="selected">1</option>
+            <option value="2">2</option>
+        </select>
+        <hr>
+        flex-basis
+        <select name="flex-basis">
+            <option value="100px">100px</option>
+            <option value="auto" selected="selected">auto</option>
+            <option value="300px">300px</option>
+        </select>
+    </div>
+    <div style="background-color: #cfc">
+        order
+        <select name="order">
+            <option value="-1">-1</option>
+            <option value="0" selected="selected">0</option>
+            <option value="1">1</option>
+        </select>
+        <hr>
+        flex-grow
+        <select name="flex-grow">
+            <option value="0" selected="selected">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        <hr>
+        flex-shrink
+        <select name="flex-shrink">
+            <option value="0">0</option>
+            <option value="1" selected="selected">1</option>
+            <option value="2">2</option>
+        </select>
+        <hr>
+        flex-basis
+        <select name="flex-basis">
+            <option value="100px">100px</option>
+            <option value="auto" selected="selected">auto</option>
+            <option value="300px">300px</option>
+        </select>
+    </div>
+    <div style="background-color: #fcc">
+        order
+        <select name="order">
+            <option value="-1">-1</option>
+            <option value="0" selected="selected">0</option>
+            <option value="1">1</option>
+        </select>
+        <hr>
+        flex-grow
+        <select name="flex-grow">
+            <option value="0" selected="selected">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        <hr>
+        flex-shrink
+        <select name="flex-shrink">
+            <option value="0">0</option>
+            <option value="1" selected="selected">1</option>
+            <option value="2">2</option>
+        </select>
+        <hr>
+        flex-basis
+        <select name="flex-basis">
+            <option value="100px">100px</option>
+            <option value="auto" selected="selected">auto</option>
+            <option value="300px">300px</option>
+        </select>
+    </div>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+<script>
+$('#container').on('change', 'select', function(){
+    $(this).closest('div').css($(this).prop('name'), $(this).val());
+})
+</script>
+</body>
+</html>

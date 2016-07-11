@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置在容器上的属性</title>
+    <style>
+    html, body{
+        margin: 0;
+        padding: 0;
+    }
+    form{
+        margin: 0 auto;
+        margin-top: 30px;
+        text-align: center;
+    }
+    #container{
+        min-height: 80px;
+        margin: 0 auto;
+        display: flex;
+        display: -webkit-flex;
+        border: 1px solid blue;
+        width: 500px;
+    }
+    #container div{
+        box-sizing: border-box;
+        border: 1px solid red;
+        width: 50px;
+    }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</div>
+<form id="setting">
+    item宽度
+    <label><input type="radio" name="width" checked="checked" value="50px">50px</label>
+    <label><input type="radio" name="width" value="200px">200px</label>
+    <hr>
+    flex-direction
+    <label><input type="radio" name="flex-direction" checked="checked" value="row">row</label>
+    <label><input type="radio" name="flex-direction" value="row-reverse">row-reverse</label>
+    <label><input type="radio" name="flex-direction" value="column">column</label>
+    <label><input type="radio" name="flex-direction" value="column-reverse">column-reverse</label>
+    <hr>
+    flex-wrap
+    <label><input type="radio" name="flex-wrap" value="wrap">wrap</label>
+    <label><input type="radio" name="flex-wrap" checked="checked" value="nowrap">nowrap</label>
+    <label><input type="radio" name="flex-wrap" value="wrap-reverse">wrap-reverse</label>
+    <hr>
+    justify-content
+    <label><input type="radio" name="justify-content" checked="checked" value="flex-start">flex-start</label>
+    <label><input type="radio" name="justify-content" value="flex-end">flex-end</label>
+    <label><input type="radio" name="justify-content" value="center">center</label>
+    <label><input type="radio" name="justify-content" value="space-between">space-between</label>
+    <label><input type="radio" name="justify-content" value="space-around">space-around</label>
+    <hr>
+    align-items
+    <label><input type="radio" name="align-items" value="flex-start">flex-start</label>
+    <label><input type="radio" name="align-items" value="flex-end">flex-end</label>
+    <label><input type="radio" name="align-items" value="center">center</label>
+    <label><input type="radio" name="align-items" value="baseline">baseline</label>
+    <label><input type="radio" name="align-items" checked="checked" value="stretch">stretch</label>
+    <hr>
+    align-content
+    <label><input type="radio" name="align-content" value="flex-start">flex-start</label>
+    <label><input type="radio" name="align-content" value="flex-end">flex-end</label>
+    <label><input type="radio" name="align-content" value="center">center</label>
+    <label><input type="radio" name="align-content" value="space-between">space-between</label>
+    <label><input type="radio" name="align-content" value="space-around">space-around</label>
+    <label><input type="radio" name="align-content" checked="checked" value="stretch">stretch</label>
+</form>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+<script>
+$(function(){
+    $('#setting').on('change', 'input', function(){
+        var data = $('#setting').serialize().split('&');
+        for (var  i = 0; i<data.length;i++){
+            data[i] = data[i].split('=');
+            if (i == 0){
+                $('#container div').css(data[i][0], data[i][1]);
+            } else {
+                $('#container').css(data[i][0], data[i][1]);
+            }
+            console.log(data[i][0] + data[i][1]);
+        }
+    })
+})
+</script>
+</body>
+</html>
