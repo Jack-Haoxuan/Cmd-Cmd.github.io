@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>纯CSS的简单几何图形</title>
+    <style>
+    html, body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    #main{
+        display: flex;
+        display: -webkit-flex;
+        height: 100%;
+    }
+    #left, #Right{
+        flex-basis: 50%;
+        -webkit-flex-basis: 50%;
+        text-align: center;
+    }
+    .display{
+        height: 0;
+        width: 0;
+        margin: 10px auto;
+    }
+    #Right .display{
+        border: 50px solid #fcf;
+    }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="left" style="background-color: #ffc">
+            <div class="display"></div>
+            <button id="up">↑</button>
+            <button id="down">↓</button>
+            <button id="left">←</button>
+            <button id="right">→</button>
+            <button id="top-left">↖</button>
+            <button id="top-right">↗</button>
+            <button id="bottom-left">↙</button>
+            <button id="bottom-right">↘</button>
+            <hr>
+            border-bottom: <input type="number" id="bbi" style="width: 50px" value="0" min="0" max="100">px <span id="bbc">transparent</span> solid<br>
+            border-top: <input type="number" id="bti" style="width: 50px" value="0" min="0" max="100">px <span id="btc">transparent</span> solid<br>
+            border-right: <input type="number" id="bri" style="width: 50px" value="0" min="0" max="100">px <span id="brc">transparent</span> solid<br>
+            border-left: <input type="number" id="bli" style="width: 50px" value="0" min="0" max="100">px <span id="blc">transparent</span> solid<br>
+        </div>
+        <div id="Right" style="background-color: #cff">
+            <div class="display"></div>
+            <button id="circle">●</button>
+            <hr>
+            border-top-left-radius: <input type="number" id="tl1" value="0" min="0" max="50" style="width: 50px"> px <input type="number" id="tl2" value="0" min="0" max="50" style="width: 50px"> px<br>
+            border-top-right-radius: <input type="number" id="tr1" value="0" min="0" max="50" style="width: 50px"> px <input type="number" id="tr2" value="0" min="0" max="50" style="width: 50px"> px<br>
+            border-bottom-left-radius: <input type="number" id="bl1" value="0" min="0" max="50" style="width: 50px"> px <input type="number" id="bl2" value="0" min="0" max="50" style="width: 50px"> px<br>
+            border-bottom-right-radius: <input type="number" id="br1" value="0" min="0" max="50" style="width: 50px"> px <input type="number" id="br2" value="0" min="0" max="50" style="width: 50px"> px<br>
+        </div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+    <script>
+    $(function(){
+        $('#left').on('click', 'button', function(){
+            $('#left .display').css({
+                'border-bottom': '50px transparent solid',
+                'border-top': '50px transparent solid',
+                'border-right': '50px transparent solid',
+                'border-left': '50px transparent solid'
+            })
+            $('#left input').val(50);
+            $('#left span').html('transparent');
+            switch ($(this).prop('id')) {
+                case 'up':
+                    $('#left .display').css('border-bottom', '50px #fcf solid');
+                    $('#bbc').html('#fcf');
+                    break;
+                case 'down':
+                    $('#left .display').css('border-top', '50px #fcf solid');
+                    $('#btc').html('#fcf');
+                    break;
+                case 'left':
+                    $('#left .display').css('border-right', '50px #fcf solid');
+                    $('#brc').html('#fcf');
+                    break;
+                case 'right':
+                    $('#left .display').css('border-left', '50px #fcf solid');
+                    $('#blc').html('#fcf');
+                    break;
+                case 'top-right':
+                    $('#left .display').css('border-top', '50px #fcf solid');
+                    $('#left .display').css('border-right', '0px transparent solid');
+                    $('#bri').val(0);
+                    $('#btc').html('#fcf');
+                    break;
+                case 'top-left':
+                    $('#left .display').css('border-top', '50px #fcf solid');
+                    $('#left .display').css('border-left', '0px transparent solid');
+                    $('#bli').val(0);
+                    $('#btc').html('#fcf');
+                    break;
+                case 'bottom-left':
+                    $('#left .display').css('border-bottom', '50px #fcf solid');
+                    $('#left .display').css('border-left', '0px transparent solid');
+                    $('#bli').val(0);
+                    $('#bbc').html('#fcf');
+                    break;
+                case 'bottom-right':
+                    $('#left .display').css('border-bottom', '50px #fcf solid');
+                    $('#left .display').css('border-right', '0px transparent solid');
+                    $('#bri').val(0);
+                    $('#bbc').html('#fcf');
+                    break;
+                default:
+                    break;
+            }
+        })
+        $('#left').on('change', 'input', function(){
+            var temp = parseInt($(this).val());
+            if (isNaN(temp) || temp < 0 || temp > 100){
+                temp = 50;
+            }
+            $(this).val(temp);
+            switch ($(this).prop('id')) {
+                case 'bbi':
+                    $('#left .display').css('border-bottom', temp+'px '+$('#bbc').html()+' solid');
+                    break;
+                case 'bti':
+                    $('#left .display').css('border-top', temp+'px '+$('#btc').html()+' solid');
+                    break;
+                case 'bri':
+                    $('#left .display').css('border-right', temp+'px '+$('#brc').html()+' solid');
+                    break;
+                case 'bli':
+                    $('#left .display').css('border-left', temp+'px '+$('#blc').html()+' solid');
+                    break;
+                default:
+                    break;
+            }
+        })
+        $('#circle').click(function(){
+            $('#Right input').val('50');
+            $('#Right .display').css({
+                'border-top-left-radius': '50px 50px',
+                'border-top-right-radius': '50px 50px',
+                'border-bottom-left-radius': '50px 50px',
+                'border-bottom-right-radius': '50px 50px'
+            })
+        })
+        $('#Right').on('change', 'input', function(){
+            var temp = parseInt($(this).val());
+            if (isNaN(temp) || temp < 0 || temp > 50){
+                temp = 50;
+            }
+            $(this).val(temp);
+            $('#Right .display').css({
+                'border-top-left-radius': $('#tl1').val()+'px '+$('#tl2').val()+'px',
+                'border-top-right-radius': $('#tr1').val()+'px '+$('#tr2').val()+'px',
+                'border-bottom-left-radius': $('#bl1').val()+'px '+$('#bl2').val()+'px',
+                'border-bottom-right-radius': $('#br1').val()+'px '+$('#br2').val()+'px',
+            });
+        })
+        $('#up, #circle').click();
+    })
+    </script>
+</body>
+</html>
