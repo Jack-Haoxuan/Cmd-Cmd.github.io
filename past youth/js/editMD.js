@@ -67,7 +67,7 @@ $(function() {
     $('#password').on('hidden.bs.modal', function() {
       $('input[name=password]').val('');
       $('#verifyInfo').html('');
-      $('#verifyOK').unbind('click');
+      $('verifyOK').unbind('click');
     });
     // 确认
     $('#verifyOK').click(function() {
@@ -96,7 +96,7 @@ $(function() {
           'password': pw,
           'title': $('input[name=title]').val(),
           'description': $('input[name=description]').val(),
-          'content': $('textarea[name=content]').val().replace(/\\/g, '\\\\').replace(/\'/g, '\\\''),
+          'content': $('textarea[name=content]').val(),
           'time': nowTime(),
           'label': labels,
           'category': $('select[name=category]').val()
@@ -118,7 +118,7 @@ $(function() {
                   $('#submit').removeClass('disabled').html('开始上传');
                 }
           );
-        } else { // 新建
+        } else {
           $.post(
               'http://c-m-d.ren/createMD.php',
               data,
@@ -127,7 +127,7 @@ $(function() {
                     alert(data);
                   } else {
                     alert('添加成功');
-                    location.href = 'detail.html?id=' + parseInt(data);
+                    location.href = 'editMD.html?id=' + parseInt(data);
                   }
                   $('#submit').removeClass('disabled').html('开始上传');
                 }

@@ -19,13 +19,6 @@ var noMore = {
 };
 
 $(function() {
-  // 详细页面
-  $('#main_content').on('click', 'article', function() {
-    if ($(this).attr('data-id') != '-1') {
-      location.href = 'pages/detail.html?id=' + $(this).attr('data-id');
-    }
-  });
-
   // 初始数据
   getData();
 
@@ -36,7 +29,6 @@ $(function() {
   $('#main_content').on('click', 'button[name=modify]', function() {
     var tempId = $(this).parents('article.preview').eq(0).attr('data-id');
     location.href = 'pages/editMD.html?id=' + tempId;
-    return false;
   });
 
   // 删除
@@ -73,7 +65,6 @@ $(function() {
         );
       }
     });
-    return false;
   });
 });
 

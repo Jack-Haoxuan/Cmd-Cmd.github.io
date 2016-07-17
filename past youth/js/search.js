@@ -5,7 +5,7 @@ var limitEnd = 10;
 var loading = {
   'id': '-1',
   'title': '<i class="fa fa-spinner fa-spin"></i> 加载中 <i class="fa fa-spinner fa-spin"></i>',
-  'description': '如果一直加载不出来大概是服务器抽风啦！<strong>点击本栏刷新吧~</strong>',
+  'description': '如果一直加载不出来大概是服务器抽风啦！刷新吧~',
   'labels': {},
   'time': ''
 };
