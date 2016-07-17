@@ -218,9 +218,47 @@ a.*?b - 匹配得到aab和ab
 >                         #最外层的右括号
 ```
 
+# js中运用正则表达式
+## `RegExp`对象
+js中正则表达式对象，通过下面两种方式可以创建  
+```
+var re = new RexExp(str, attr) // str是正则表达式字符串，attr是可选参数
+var re = /str/attr // str是正则表达式，用两个/包围，后面attr是可选参数
+```
+
+## 可选参数(修饰符)
+* `i` - 忽略大小写敏感  
+* `g` - 执行全局匹配  
+* `m` - 执行多行匹配  
+
+> 常用的是`g`，比如用`/\d+/`和`/\d+/g`去匹配字符串`1a2b3d4c`，前者只能匹配到一个结果`['1']`，后者可以匹配到四个结果`['1', '2', '3', '4']`  
+
+## 可以使用正则的函数
+以下样例中用 **`re`表示正则表达式，用`s`表示字符串**
+
+### s.match(re)
+匹配字符串，返回匹配结果  
+
+### s.search(re)
+返回匹配上的第一个字串的偏移量  
+
+### s.replace(re, text)
+将匹配结果替换为其他文本  
+
+### s.split(re)
+将匹配的子串作为分隔符，返回分割后的数组(此函数无视`g`修饰符，默认全文替换)  
+
+### re.exec(s)
+对字符串查找，返回找到的子字符串和偏移量(此函数无视`g`修饰符，只返回第一个结果)  
+
+### re.test(s)
+检测字符串，仅当完全匹配上时返回`true`  
+
 --------
 
 # 资料整理
 > [正则表达式30分钟入门教程](http://www.jb51.net/tools/zhengze.html)  
 > [在线正则表达式测试](http://tool.oschina.net/regex/?optionGlobl=global)  
 > [正则表达式_百度百科](http://baike.baidu.com/link?url=Kyr3xSsxEEWLy1s2rJ0j0A-xh7zzsXAovstg8csK-ANY5qTplDrEdH2kBUThojeHyXJlAtJyBMj40lFbrFUoeK#4)  
+> [js正则函数match、exec、test、search、replace、split使用介绍集合](http://www.jb51.net/article/28007.htm)  
+> [JavaScript RegExp 对象](http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp)  

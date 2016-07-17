@@ -4,50 +4,26 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-    html, body{
-        margin: 0;
-        padding: 0;
+    progress {
+        width: 160px;
+        height: 20px;
+        border: 1px solid #ccc;
+        background-color: #e6e6e6;
+        color: #0064B4; /* IE10 */
     }
-    div{
-        height: 100px;
-    }
-    .header, .footer{
-        width: 100%;
-        background-color: #eee;
-    }
-    .bd{
-        padding: 0 150px 0 200px;
-    }
-    .main{
-        background-color: #ccf;
-        width: 100%;
-        float: left;
-    }
-    .left{
-        background-color: #ffc;
-        float: left;
-        width: 200px;
-        position: relative;
-        left: -200px;
-        margin-left: -100%;
-    }
-    .right{
-        background-color: #cfc;
-        width: 150px;
-        float: left;
-        margin-left: -150px;
-        position: relative;
-        right: -150px;
-    }
+    progress::-moz-progress-bar { background: #0064B4; } /* FF */
+    progress::-webkit-progress-bar { background: white; } /* chrome */
+    progress::-webkit-progress-value  { background: #eee; } /* chrome */
     </style>
+    <script type="text/javascript">
+    var a = '1a2b3d4c';
+    var re1 = /\d+/;
+    var re2 = /\d+/g;
+    console.log(re1.exec(a));
+    console.log(re2.exec(a));
+    </script>
 </head>
 <body>
-    <div class="header"></div>
-    <div class="bd">
-        <div class="main">圣杯部局</div>
-        <div class="left"></div>
-        <div class="right"></div>
-    </div>
-    <div class="footer"></div>
+    <progress value="50" max="100">50%</progress>
 </body>
 </html>

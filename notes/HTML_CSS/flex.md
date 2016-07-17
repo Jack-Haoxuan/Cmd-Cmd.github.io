@@ -30,7 +30,8 @@ display: -webkit-inline-flex;
 * `align-content: flex-start | flex-end | center | space-between | space-around | stretch` - 多根主轴(主轴换行)时的交叉轴对齐方式  
 
 > `flex-flow`属性是`flex-direction`和`flex-warp`的简写，默认`row nowarp`  
-> [demo](http://htmlpreview.github.io/?https://github.com/Cmd-Cmd/cmd-cmd.github.io/blob/master/notes/HTML_CSS/demo/flex/container.html)  
+
+[demo](http://htmlpreview.github.io/?https://github.com/Cmd-Cmd/cmd-cmd.github.io/blob/master/notes/HTML_CSS/demo/flex/container.html)  
 
 # 设置在项目上的属性
 * `order` - 定义项目排列顺序，数值越小排越前(可以负值)，默认为0  
@@ -44,7 +45,8 @@ display: -webkit-inline-flex;
 > `flex`属性是`flex-grow`、`flex-shrink`和`flex-basis`的简写，默认`flex: 0 1 auto`  
 > `flex: auto` - 即为`flex: 1 1 auto`  
 > `flex: none` - 即为`flex: 0 0 auto`  
-> [demo](http://htmlpreview.github.io/?https://github.com/Cmd-Cmd/cmd-cmd.github.io/blob/master/notes/HTML_CSS/demo/flex/items.html)  
+
+[demo](http://htmlpreview.github.io/?https://github.com/Cmd-Cmd/cmd-cmd.github.io/blob/master/notes/HTML_CSS/demo/flex/items.html)  
 
 --------
 

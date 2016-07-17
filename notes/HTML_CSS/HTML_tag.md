@@ -65,3 +65,28 @@ alt属性：规定图像的替代文本（作为无法显示图像时的替代�
 首先想到的就是`cellspacing`、`cellpadding`、伪类选择第一个或者最后一个`td`特殊化等等，这个方案虽然有效，但是也很复杂，更好的 **添加样式`border-collapse: collapse`**，可以很好的解决边框问题  
 
 > [table的border-collapse属性与border-spacing属性](http://blog.sina.com.cn/s/blog_6e60e58c0101j2y5.html)  
+
+# `<progress>`标签
+该标签用于表示任务的进度  
+
+## 标签属性
+* `max属性` - 进度条最大值  
+* `value属性` - 当前进度值  
+
+## CSS样式表最大化兼容模板
+常理考虑，`color`应该为已完成进度颜色，`background-color`应该为未完成进度颜色，另外也可通过`border`调整进度条边框样式  
+
+```
+progress {
+    width: 160px;
+    height: 20px;
+    border: 1px solid #0064B4;  
+    background-color: #e6e6e6;
+    color: #0064B4; /* IE10 */
+}
+progress::-moz-progress-bar { background: #0064B4; } /* FF */
+progress::-webkit-progress-bar { background: #e6e6e6; } /* chrome */
+progress::-webkit-progress-value  { background: #0064B4; } /* chrome */
+```
+
+> [HTML5 progress元素的样式控制、兼容与实例](http://www.zhangxinxu.com/wordpress/2013/02/html5-progress-element-style-control/)  
