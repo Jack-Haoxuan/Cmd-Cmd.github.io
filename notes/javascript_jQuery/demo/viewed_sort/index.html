@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可视化排序</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="js/index.js" charset="utf-8"></script>
+</head>
+<body>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            操作
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button class="btn btn-danger" id="btnLeftDel">左侧删除数据</button>
+                            <button class="btn btn-primary" id="btnLeftAdd">左侧插入数据</button>
+                        </div>
+                        <input type="number" class="form-control" id="inNumber" min="1" max="1000" placeholder="数字范围1-1000，否则随机数值">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" id="btnRightAdd">右侧插入数据</button>
+                            <button class="btn btn-danger" id="btnRightDel">右侧删除数据</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="btn-group">
+                        <button class="btn btn-info" id="btnRandomData">随机重置数据</button>
+                        <button class="btn btn-warning" id="btnFastSort">快速排序</button>
+                        <button class="btn btn-warning" id="btnBubbleSort">冒泡排序</button>
+                        <button class="btn btn-warning" id="btnSelectSort">选择排序</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-warning">
+        <span id="alertWindow">最多可以容纳1000个数据</span>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            可视化界面
+        </div>
+        <div class="panel-body">
+            <div class="viewport">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

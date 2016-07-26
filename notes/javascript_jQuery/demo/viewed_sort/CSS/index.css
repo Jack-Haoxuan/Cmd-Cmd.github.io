@@ -1,0 +1,17 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+div.viewport{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+div.viewport span{
+    flex: 1 0 0;
+}
+div.viewport span:hover{
+    cursor: pointer;
+}
