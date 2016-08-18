@@ -114,6 +114,7 @@ var y = e.clientY + $('body').scrollTop() - $('#mainContent').offset().top;
 ![图解位置](./demo/hotmap/img/getPos.png)  
 ![点击示例](./demo/hotmap/img/clickPos.png)  
 
+[demo](./demo/hotmap/index.html)  
 
 --------
 
