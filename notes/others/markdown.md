@@ -113,6 +113,6 @@ Markdown 标记语法
 
 --------
 
-## 资料整理
+# 资料整理
 > [百度百科 - markdown](http://baike.baidu.com/subview/2311114/2311114.htm)  
 > [markdown 11种基本语法](http://www.cnblogs.com/hnrainll/p/3514637.html)

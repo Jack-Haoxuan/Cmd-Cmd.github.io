@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="hotmap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1000px" height="563px" viewBox="0 0 1000 563" enable-background="new 0 0 1000 563" xml:space="preserve">
+<image overflow="visible" width="1000" height="563" id="car" xlink:href="bg.jpg" >
+</image>
+<path id="frontWin" opacity="0.3" fill="#C6BAFF" d="M437,225.333c-20.5-46.667,24-60.5,26.833-63.833
+	c3.01-2.308,89.333-51.333,110-43c20.667,8.333,73.5,50.667,82.833,58.667c9.333,8,15.5,18.167,0,37.667
+	S561.976,265.432,551,266.167S456,273.5,450.167,262C444.333,250.5,445.833,250.333,437,225.333z"/>
+<path id="sideWin" opacity="0.3" fill="#C6BAFF" d="M343.25,156.5c3.833-6.25,49.5,16.833,65.5,26.25s17.614,26.472,14.5,41.5
+	s-3.5,15.75-3.833,18.5c-0.333,2.75-11.417,6.167-26.583,0c-15.167-6.167-38.583-20.583-49.583-27.667c-11-7.083-8-25.25-8-25.25
+	S339.417,162.75,343.25,156.5z"/>
+<path id="frontWheel" opacity="0.3" fill="#C6BAFF" d="M576,438c0,29.915-16.439,40.667-37.333,40.667s-69-49.085-69-79
+	c0-29.915,12.439-41.333,33.333-41.333S576,408.085,576,438z"/>
+<path id="rightLight" opacity="0" fill="#FFFFFF" d="M686.5,391c0,0,33.75,18,54.5,33.25c15.25,12.75,2.5,16-6.5,19.25
+	s-66-3-77.25-7.5s-4.188-17.563-1.75-21C657.75,411.25,686.5,391,686.5,391z"/>
+<path id="logo" opacity="0.3" fill="#C6BAFF" d="M868.625,391.75c3.25-3.625,12.625,4.25,12.625,4.25s7.875,9.625,4.875,12.875
+	s-14-5.375-14-5.375S865.375,395.375,868.625,391.75z"/>
+</svg>

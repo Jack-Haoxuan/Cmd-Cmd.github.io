@@ -1,0 +1,44 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+#topContent, #bottomContent{
+    height: 100px;
+    background-color: #eee;
+    width: 150%;
+}
+#mainContent{
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+}
+#ops{
+    position: absolute;
+    top: -100%;
+    left: -100%;
+}
+#ops .dropdown-header{
+    font-weight: bold;
+    font-size: 1.3em;
+}
+#hotmap{
+    width: 100%;
+}
+.hotarea{
+    fill: rgb(130, 178, 242);
+    opacity: 0.3;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.hotarea:hover{
+    opacity: 0.7;
+    stroke: yellow;
+    stroke-width: 1px;
+    stroke-dasharray: 6, 4;
+}
+.hotarea.active{
+    fill: rgb(66, 250, 79);
+    opacity: 0.7;
+}
