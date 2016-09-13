@@ -12,14 +12,18 @@ SVG(Scalable Vector Graphics)是可缩放 **矢量图形** ，矢量图与常见
 
 # 简短说明
 因为需要做这么一个功能，在一张平面图上设置热区，用户可点击热区并可以执行相应操作  
-一开始用html的`<area>`标签实现，但是发现这个标签有太多不方便，比如没法使用`hover`伪类(网上提示说可以用`onmousemove`等事件+替换背景图来模拟`hover`效果)、没法自适应宽度(`<area>`标签需要精准的`coords`坐标)、`<area>`中的精确坐标很难确定(找到一个[在线可视化制作热区的网站](http://www.image-maps.com/))等  
-综上，我想到我从未接触过的SVG，本来以为可以找到什么插件来完成的，但只找到[Raphaël](http://dmitrybaranovskiy.github.io/raphael/)这个强大的矢量图形库，其实对我并没用...所以想将此次几乎是从零开始(至少还是接触过矢量图的)的经历记录下来  
+一开始用html的`<area>`标签实现，但是发现这个标签有太多不方便，比如没法使用`hover`伪类(网上提示说可以用`onmousemove`等事件+替换背景图来模拟`hover`效果)、没法自适应宽度(`<area>`标签需要精准的`coords`坐标)、`<area>`中的精确坐标很难确定(找到一个
+[在线可视化制作热区的网站](http://www.image-maps.com/)
+)等  
+综上，我想到我从未接触过的SVG，本来以为可以找到什么插件来完成的，但只找到
+[Raphaël](http://dmitrybaranovskiy.github.io/raphael/)
+这个强大的矢量图形库，其实对我并没用...所以想将此次几乎是从零开始(至少还是接触过矢量图的)的经历记录下来  
 
 --------
 
 # 准备工作
 * **一张平面图** - 随便在网上找吧(一张帅炸天的玛萨拉蒂)  
-![平面图](https://raw.githubusercontent.com/Cmd-Cmd/cmd-cmd.github.io/master/notes/others/demo/hotmap/img/bg.jpg)  
+![平面图](./demo/hotmap/img/bg.jpg)  
 * **矢量图编辑工具** - 我用的AI(Adobe Illustrator CC)  
 * **jQuery** - 一个[百度静态资源库](http://cdn.code.baidu.com/)的CDN解决  
 
@@ -31,15 +35,19 @@ SVG(Scalable Vector Graphics)是可缩放 **矢量图形** ，矢量图与常见
 * 用小白箭头选取路径区域可以设置区域填充颜色、透明度、边框等  
 
 我勾出了前窗、侧窗、前轮、前灯和LOGO  
-![图片处理](https://raw.githubusercontent.com/Cmd-Cmd/cmd-cmd.github.io/master/notes/others/demo/hotmap/img/picProcess.png)  
+![图片处理](./demo/hotmap/img/picProcess.png)  
 
-之后保存格式为svg我们就得到了一个svg文件了，这个svg文件可以[直接引入](http://www.runoob.com/svg/svg-inhtml.html)，但是我不这样做，因为不方便我控制样式(CSS)和脚本(JS)  
+之后保存格式为svg我们就得到了一个svg文件了，这个svg文件可以
+[直接引入](http://www.runoob.com/svg/svg-inhtml.html)
+，但是我不这样做，因为不方便我控制样式(CSS)和脚本(JS)  
 
 # 放入HTML中
 将svg文件中`<svg>`标签及其全部内容放到HTML文档中，并稍加修改，下面是修改的具体内容和最终svg代码  
 
 * 将`<svg>`标签中的`width`和`height`去掉，因为要做成自适应宽度  
-* `<svg>`中的`viewBox`属性(记住B大写)是视区盒子，用来规定画板大小而非我们最终所看到的大小，可以看一篇[张鑫旭的文章](http://www.zhangxinxu.com/wordpress/2014/08/svg-viewport-viewbox-preserveaspectratio/)深刻理解  
+* `<svg>`中的`viewBox`属性(记住B大写)是视区盒子，用来规定画板大小而非我们最终所看到的大小，可以看一篇
+[张鑫旭的文章](http://www.zhangxinxu.com/wordpress/2014/08/svg-viewport-viewbox-preserveaspectratio/)
+深刻理解  
 * 给每个热区添加类`hotarea`并将内联的`fill`和`opacity`样式去掉，以方便用CSS控制，注意 **svg中背景色属性是`fill`，而描边属性是`stroke`**  
 
 ```
@@ -69,11 +77,11 @@ SVG(Scalable Vector Graphics)是可缩放 **矢量图形** ，矢量图与常见
 ## 自适应宽度
 自适应宽度想着很简单，只要在CSS中`width: 100%`就解决了，但是经过我手头上现有浏览器的测试，chorme(版本 52)和edge(版本 38)是没问题的；但在ie11下，其自适应似乎有个临界值，大于某个临界值则不再自适应；而在360浏览器(版本 7.1)下，虽然是会自适应，但是在svg顶部会有莫名其妙的留白(丢给小伙伴的360 v8.1下就没问题了，ps：可设置`preserveAspectRatio="xMidYMin meet"`但依旧会有底部留白)  
 
-* ie11效果  
-![ie11效果](https://raw.githubusercontent.com/Cmd-Cmd/cmd-cmd.github.io/master/notes/others/demo/hotmap/img/ie11.gif)  
+* ie11效果
+![ie11效果](./demo/hotmap/img/ie11.gif)  
 
-* 360效果  
-![ie11效果](https://raw.githubusercontent.com/Cmd-Cmd/cmd-cmd.github.io/master/notes/others/demo/hotmap/img/360.png)  
+* 360效果
+![ie11效果](./demo/hotmap/img/360.png)  
 
 另外网上也有人提出js动态控制svg的绝对宽度，试了下是可行，但上面的问题也依旧存在，下面给出js代码  
 
@@ -103,13 +111,10 @@ var x = e.clientX + $('body').scrollLeft() - $('#mainContent').offset().left;
 var y = e.clientY + $('body').scrollTop() - $('#mainContent').offset().top;
 ```
 
-![图解位置](https://raw.githubusercontent.com/Cmd-Cmd/cmd-cmd.github.io/master/notes/others/demo/hotmap/img/getPos.png)  
-![点击示例](https://raw.githubusercontent.com/Cmd-Cmd/cmd-cmd.github.io/master/notes/others/demo/hotmap/img/clickPos.png)  
+![图解位置](./demo/hotmap/img/getPos.png)  
+![点击示例](./demo/hotmap/img/clickPos.png)  
 
-其次需要注意的是，jq操作svg内的class不能使用`addClass`或者`removeClass`，具体为何不知道，但是可以用`attr('class', '...')`来实现  
-
-[demo](http://htmlpreview.github.io/?https://github.com/Cmd-Cmd/cmd-cmd.github.io/blob/master/notes/others/demo/hotmap/index.html)  
-[source](https://github.com/Cmd-Cmd/cmd-cmd.github.io/tree/master/notes/others/demo/hotmap)  
+[demo](./demo/hotmap/index.html)  
 
 --------
 
