@@ -18,6 +18,8 @@ body {
     justify-content: center;
     -webkit-justify-content: center;
     overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 /*外框三色圈*/
@@ -341,24 +343,37 @@ div.loading div.circle div.rgbLine label.b {
 
 div.rect {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    /*width: 150px;
+    height: 150px;*/
     left: 0;
-    top: 0;
+    bottom: 0;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+    -webkit-perspective: 3000px;
     perspective: 3000px;
-    perspective-origin: top right;
+    -webkit-perspective-origin: 1000px -800px;
+    perspective-origin: 1000px -800px;
 }
-div.rect.down{
+div.rect.down {
     animation: downRect 0.7s linear;
+    -webkit-animation: downRect 0.7s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 @keyframes downRect {
-    from{
+    from {
         transform: translateY(0);
     }
-    to{
+    to {
         transform: translateY(150px);
+    }
+}
+@-webkit-keyframes downRect {
+    from {
+        -webkit-transform: translateY(0);
+    }
+    to {
+        -webkit-transform: translateY(150px);
     }
 }
 div.rect span {
@@ -372,6 +387,8 @@ div.rect span {
     border: 3px solid white;
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: border-color 1s;
+    -webkit-transition: border-color 1s;
 }
 div.rect span:after {
     color: white;
@@ -406,13 +423,18 @@ div.rect span:before {
 }
 div.rect span.bottom {
     transform-origin: bottom center;
+    -webkit-transform-origin: bottom center;
     transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
     opacity: 0;
     transition: opacity 1s;
+    -webkit-transition: opacity 1s;
 }
 div.rect span.bottomR {
     animation: backBottom 1s linear;
+    -webkit-animation: backBottom 1s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 @keyframes backBottom {
     from {
@@ -432,15 +454,39 @@ div.rect span.bottomR {
     to {
         transform-origin: top center;
         transform: rotateX(-90deg);
+    }
+}
+@-webkit-keyframes backBottom {
+    from {
+        -webkit-transform-origin: bottom center;
+        -webkit-transform: rotateX(90deg);
+    }
+    to {
+        -webkit-transform-origin: top center;
+        -webkit-transform: rotateX(-90deg);
+    }
+}
+@-webkit-keyframes backBottom {
+    from {
+        -webkit-transform-origin: bottom center;
+        -webkit-transform: rotateX(90deg);
+    }
+    to {
+        -webkit-transform-origin: top center;
+        -webkit-transform: rotateX(-90deg);
     }
 }
 div.rect span.front {
     animation: toFront 1s linear;
+    -webkit-animation: toFront 1s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 div.rect span.frontR {
     animation: backFront 1s linear;
+    -webkit-animation: backFront 1s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 @keyframes toFront {
     from {
@@ -462,13 +508,37 @@ div.rect span.frontR {
         transform: rotateX(-90deg);
     }
 }
+@-webkit-keyframes toFront {
+    from {
+        -webkit-transform-origin: bottom center;
+        -webkit-transform: rotateX(90deg);
+    }
+    to {
+        -webkit-transform-origin: bottom center;
+        -webkit-transform: rotateX(0);
+    }
+}
+@-webkit-keyframes backFront {
+    from {
+        -webkit-transform-origin: bottom center;
+        -webkit-transform: rotateX(0);
+    }
+    to {
+        -webkit-transform-origin: top center;
+        -webkit-transform: rotateX(-90deg);
+    }
+}
 div.rect span.left {
     animation: toLeft 1s linear;
+    -webkit-animation: toLeft 1s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 div.rect span.leftR {
     animation: backLeft 1s linear;
+    -webkit-animation: backLeft 1s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 @keyframes toLeft {
     from {
@@ -490,13 +560,37 @@ div.rect span.leftR {
         transform: rotateX(-90deg);
     }
 }
+@-webkit-keyframes toLeft {
+    from {
+        -webkit-transform-origin: left center;
+        -webkit-transform: translateZ(-75px) translateY(75px) rotateX(90deg);
+    }
+    to {
+        -webkit-transform-origin: left center;
+        -webkit-transform: translateZ(-75px) translateY(75px) rotateX(90deg) rotateY(-90deg);
+    }
+}
+@-webkit-keyframes backLeft {
+    from {
+        -webkit-transform-origin: left center;
+        -webkit-transform: translateZ(-75px) translateY(75px) rotateX(90deg) rotateY(-90deg);
+    }
+    to {
+        -webkit-transform-origin: top center;
+        -webkit-transform: rotateX(-90deg);
+    }
+}
 div.rect span.right {
     animation: toRight 1s linear;
+    -webkit-animation: toRight 1s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 div.rect span.rightR {
     animation: backRight 1s linear;
+    -webkit-animation: backRight 1s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 @keyframes toRight {
     from {
@@ -518,9 +612,31 @@ div.rect span.rightR {
         transform: rotateX(-90deg);
     }
 }
+@-webkit-keyframes toRight {
+    from {
+        -webkit-transform-origin: right center;
+        -webkit-transform: translateZ(-75px) translateY(75px) rotateX(90deg);
+    }
+    to {
+        -webkit-transform-origin: right center;
+        -webkit-transform: translateZ(-75px) translateY(75px) rotateX(90deg) rotateY(90deg);
+    }
+}
+@-webkit-keyframes backRight {
+    from {
+        -webkit-transform-origin: right center;
+        -webkit-transform: translateZ(-75px) translateY(75px) rotateX(90deg) rotateY(90deg);
+    }
+    to {
+        -webkit-transform-origin: top center;
+        -webkit-transform: rotateX(-90deg);
+    }
+}
 div.rect span.top {
     animation: toTop 1s linear;
+    -webkit-animation: toTop 1s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 @keyframes toTop {
     from {
@@ -530,13 +646,25 @@ div.rect span.top {
         transform: translateZ(-75px) translateY(-75px) rotateX(90deg);
     }
 }
+@-webkit-keyframes toTop {
+    from {
+        -webkit-transform: translateZ(-75px) translateY(75px) rotateX(90deg);
+    }
+    to {
+        -webkit-transform: translateZ(-75px) translateY(-75px) rotateX(90deg);
+    }
+}
 div.rect span.back {
     animation: toBack 1s linear;
+    -webkit-animation: toBack 1s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 div.rect span.backR {
     animation: backBack 1s linear;
+    -webkit-animation: backBack 1s linear;
     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 @keyframes toBack {
     from {
@@ -558,44 +686,72 @@ div.rect span.backR {
         transform: rotateX(-90deg);
     }
 }
-div.rect span label{
+@-webkit-keyframes toBack {
+    from {
+        transform-origin: bottom center;
+        -webkit-transform-origin: bottom center;
+        transform: translateZ(-150px) rotateX(-90deg);
+        -webkit-transform: translateZ(-150px) rotateX(-90deg);
+    }
+    to {
+        transform-origin: bottom center;
+        -webkit-transform-origin: bottom center;
+        transform: translateZ(-150px) rotateX(0);
+        -webkit-transform: translateZ(-150px) rotateX(0);
+    }
+}
+@-webkit-keyframes backBack {
+    from {
+        transform-origin: bottom center;
+        -webkit-transform-origin: bottom center;
+        transform: translateZ(-150px) rotateX(0);
+        -webkit-transform: translateZ(-150px) rotateX(0);
+    }
+    to {
+        transform-origin: top center;
+        -webkit-transform-origin: top center;
+        transform: rotateX(-90deg);
+        -webkit-transform: rotateX(-90deg);
+    }
+}
+
+/*背景*/
+
+div.bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.bg span {
+    position: absolute;
+    top: -1em;
     opacity: 0;
 }
-div.rect span label.goCircle{
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    box-sizing: border-box;
-    animation: switchOn 1s infinite;
-    box-shadow: 0 0 10px #6699ff;
-}
-@keyframes switchOn {
+@keyframes textDown {
     from {
-        height: 10px;
-        width: 10px;
-        margin-left: -5px;
-        margin-top: -5px;
+        top: -1em;
         opacity: 0;
-        border: 10px dashed #99ff66;
-        border-radius: 100%;
     }
-    80% {
-        height: 100%;
-        width: 100%;
-        margin-left: -50%;
-        margin-top: -50%;
-        opacity: 1;
-        border: 0px dashed #99ff66;
-        border-radius: 0;
+    50% {
+        opacity: 0.8;
     }
-    100% {
-        height: 100%;
-        width: 100%;
-        margin-left: -50%;
-        margin-top: -50%;
+    to {
+        top: 100%;
         opacity: 0;
-        border: 0px dashed #99ff66;
-        border-radius: 0;
+    }
+}
+@-webkit-keyframes textDown {
+    from {
+        top: -1em;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    to {
+        top: 100%;
+        opacity: 0;
     }
 }
