@@ -1,0 +1,25 @@
+{
+  "name": "crawler_bilibili",
+  "version": "1.0.0",
+  "description": "使用Node.js获取B站首页GIF图片",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "dasdf"
+  },
+  "keywords": [
+    "Node.js",
+    "request",
+    "爬虫",
+    "crawler",
+    "bilibili"
+  ],
+  "author": "Cmd",
+  "license": "ISC",
+  "devDependencies": {
+    "request": "^2.75.0"
+  }
+}
