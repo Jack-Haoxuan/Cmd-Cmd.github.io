@@ -8,7 +8,7 @@
 [B站首页](http://www.bilibili.com)右上角搜索框下面的GIF图片  
 
 ## 初步流程图
-![初步流程图](demo/crawler_bilibili/img/flowChart1.png)  
+![初步流程图](https://github.com/Cmd-Cmd/Cmd-Cmd.github.io/blob/master/notes/javascript_jQuery/demo/crawler_bilibili/img/flowChart1.png?raw=true)  
 
 一开始的想法很单纯，既然 **每次刷新首页都会随机得到一张GIF动图**，这些动图的url地址都没有规律可循，但我可以不断去请求首页URL并将目标图片的地址和标题扒下来，再次请求图片存在本地就好了，再考虑上 **随机次数** 和 **判断重复** ，理论上只要请求次数足够多，总能把所有图片搞到手  
 但很快就发现了很多 **局限性**  
@@ -17,15 +17,11 @@
 1. 图片资源一般不会在页面响应时就获取到，一般图片资源较大，都会采用异步加载手段来优化页面，也就是说并不是一次首页请求就能弄到图片地址的，因为 **图片地址都在js脚本里面**  
 2. 那么 **去js文件当中找到动态添加图片元素的代码** ，不就能知道图片的地址了吗？于是我将页面上所有js代码都查询了个遍，终于在一个叫`base.core.js`里面找到了存放图片元素的容器标记(id=random_p，还好这个容器不是动态生成的...)  
 3. 但是有了新的问题，又是页面优化， **js代码是经过压缩过的** (去掉不必要的换行空格以及注释、变量名缩短等)，所以即使我用自动排版插件将js文件重新排版，我仍然不知道这些abcdefg变量都是些啥   
-4. 于是我尝试换一种思路，浏览器对用户来说，也仅是发送了url这一个请求，但是浏览器会自动执行js代码、进行CSS样式渲染，那么我们如果模拟浏览器的实现，就可以得到一个"包含所有图片的最终页面"了，于是我又翻到[PhantomJS](http://phantomjs.org/)、
-[scrapy-splash](https://github.com/scrapy-plugins/scrapy-splash)、
-[NW.js(node-webkit)](http://nwjs.io/)、
-[crawer](https://www.npmjs.com/package/crawler)
-等一系列的解决方案，但觉得和我的初衷有出入，也就放弃了  
+4. 于是我尝试换一种思路，浏览器对用户来说，也仅是发送了url这一个请求，但是浏览器会自动执行js代码、进行CSS样式渲染，那么我们如果模拟浏览器的实现，就可以得到一个"包含所有图片的最终页面"了，于是我又翻到[PhantomJS](http://phantomjs.org/)、[scrapy-splash](https://github.com/scrapy-plugins/scrapy-splash)、[NW.js(node-webkit)](http://nwjs.io/)、[crawer](https://www.npmjs.com/package/crawler)等一系列的解决方案，但觉得和我的初衷有出入，也就放弃了  
 5. 打了把游戏回来，仔细想了下，既然图片地址没有规律可循，那么B站又怎么确定精确地址的呢？于是我又扎入了非人类可阅读的`base.core.js`里面了...终于，我找到了一个叫`index-icon.json`的json文件，用浏览器打开一看，这不就是我要找的图片地址和图片标题吗？！  
 
 ## 后期流程图
-![后期流程图](demo/crawler_bilibili/img/flowChart2.png)  
+![后期流程图](https://github.com/Cmd-Cmd/Cmd-Cmd.github.io/blob/master/notes/javascript_jQuery/demo/crawler_bilibili/img/flowChart2.png?raw=true)  
 
 所以说根本用不上`cheerio`模块...
 
@@ -36,7 +32,7 @@
 这次自发小项目最后其实只有20行不到的代码，但感觉自己学到的不仅仅是这一小段代码，从 **js模块化的三个规范** 、 **Node.js和npm的复习预习与实践** 、 **各种模块的使用** 到 **简单的爬虫思想与抓取动态数据** 、 **页面优化与异步请求对爬虫(SEO)的直接影响** 、 **gzip原来是一种编码而不仅仅只是打包** 等，真的收获不小  
 一个简单的爬虫程序，给我最大的感悟就是， **不同的爬虫需求需要从不同的角度出发** ，对症下药才有用，比如我如果只是获取首页导航栏分类或者要获取到每个模块下的视频预览图片与相关信息，肯定又需要从另一个角度去分析这个网页了  
 
-# 项目结构
+# 项目结构与源码
 ```
 crawler_bilibili
     |--index.js // 主入口程序
@@ -45,7 +41,7 @@ crawler_bilibili
     |--node_modules // 额外包
         |--request // request模块
 ```
-[demo]()
+[source](https://github.com/Cmd-Cmd/Cmd-Cmd.github.io/tree/master/notes/javascript_jQuery/demo/crawler_bilibili)
 
 --------
 
